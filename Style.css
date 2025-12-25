@@ -1,68 +1,40 @@
-body {
+html, body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
-}
-
-header {
-  padding: 12px;
-  text-align: center;
-  background: #020617;
-  font-size: 18px;
-  font-weight: bold;
-  color: #38bdf8;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
 }
 
 #map {
-  height: 60vh;
+  height: 100vh;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #020617;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  z-index: 1000;
 }
 
 .panel {
-  padding: 14px;
-  background: #020617;
-}
-
-.status {
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.safe {
-  background: #064e3b;
-  color: #34d399;
-}
-
-.danger {
-  background: #7f1d1d;
-  color: #fca5a5;
-}
-
-.info {
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-button {
-  flex: 1;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #0284c7;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-input[type=range] {
+  position: fixed;
+  bottom: 0;
   width: 100%;
+  background: rgba(2, 6, 23, 0.9);
+  color: white;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.status.safe {
+  color: #22c55e;
+}
+
+.status.alert {
+  color: #ef4444;
 }
