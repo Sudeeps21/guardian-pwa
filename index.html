@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guardian – Live Tracking Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#020617">
+
+</head>
+<body>
+
+<header>Guardian – Live Location (Demo Mode)</header>
+
+<div id="map"></div>
+
+<div class="panel">
+  <div id="statusBox" class="status safe">STATUS: SAFE ZONE</div>
+
+  <div class="info">
+    <p><b>Connection:</b> <span id="mode">Bluetooth (BLE)</span></p>
+    <p><b>Latitude:</b> <span id="lat">12.9716</span></p>
+    <p><b>Longitude:</b> <span id="lon">77.5946</span></p>
+    <p><b>Distance from center:</b> <span id="dist">0</span> m</p>
+  </div>
+
+  <div class="controls">
+    <button onclick="toggleMode()">Change Mode</button>
+    <button onclick="toggleMovement()">Start / Stop</button>
+  </div>
+
+  <h4>Safe Radius (meters)</h4>
+  <input type="range" min="50" max="500" value="150" id="radiusSlider" />
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('Service Worker Registered'));
+  }
+</script>
+
+
+</body>
+</html>
